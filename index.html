@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExamSphere — Scalable Backend Architecture &amp; Spaced-Repetition Engine</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #030514;
+      color: #e2e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .glass-box {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-[#060a22] via-[#040618] to-[#01020a]">
+
+  <!-- Header -->
+  <header class="border-b border-white/10 bg-[#091030]/80 backdrop-blur-xl sticky top-0 z-50 px-6 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-500 to-cyan-400 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+          <i class="fa-solid fa-server text-white text-base"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-300 tracking-tight">ExamSphere</h1>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-cyan-300 border border-blue-500/30 font-mono">PostgreSQL + Redis + OWASP</span>
+          </div>
+          <p class="text-[11px] text-gray-400">Scalable Modular-Monolith Backend Architecture</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/MIHIR-1304/ExamSphere" target="_blank" class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-xs text-gray-200 transition-all font-semibold">
+          <i class="fa-brands fa-github text-sm"></i>
+          <span>GitHub Repo</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Body -->
+  <main class="flex-1 max-w-7xl mx-auto w-full p-6 space-y-6">
+    <!-- Architecture Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="glass-box rounded-2xl p-4">
+        <div class="flex items-center justify-between text-blue-400 mb-2">
+          <i class="fa-solid fa-database text-xl"></i>
+          <span class="text-[10px] uppercase font-bold text-gray-400 font-mono">10+ Entities</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">PostgreSQL 3NF Schema</h3>
+        <p class="text-[11px] text-gray-400 mt-1">Normalized junction tables, foreign keys, cascade constraints.</p>
+      </div>
+
+      <div class="glass-box rounded-2xl p-4">
+        <div class="flex items-center justify-between text-cyan-400 mb-2">
+          <i class="fa-solid fa-bolt text-xl"></i>
+          <span class="text-[10px] uppercase font-bold text-gray-400 font-mono">GIN &amp; Composite</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Sub-ms Query Tuning</h3>
+        <p class="text-[11px] text-gray-400 mt-1">GIN full-text search index and composite B-tree filters.</p>
+      </div>
+
+      <div class="glass-box rounded-2xl p-4">
+        <div class="flex items-center justify-between text-rose-400 mb-2">
+          <i class="fa-solid fa-memory text-xl"></i>
+          <span class="text-[10px] uppercase font-bold text-gray-400 font-mono">Redis 7.0</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Memory Cache Layer</h3>
+        <p class="text-[11px] text-gray-400 mt-1">TTL-governed session tokens and query result caches.</p>
+      </div>
+
+      <div class="glass-box rounded-2xl p-4">
+        <div class="flex items-center justify-between text-emerald-400 mb-2">
+          <i class="fa-solid fa-shield-halved text-xl"></i>
+          <span class="text-[10px] uppercase font-bold text-gray-400 font-mono">OWASP Top 10</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Security SRS</h3>
+        <p class="text-[11px] text-gray-400 mt-1">Strict JWT RBAC validation, rate limiting &amp; audit logging.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Spaced-Repetition Simulator -->
+    <div class="glass-box rounded-2xl p-6">
+      <div class="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+        <div>
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-brain text-cyan-400"></i>
+            <span>Interactive Spaced-Repetition (SM-2) Calculator</span>
+          </h2>
+          <p class="text-xs text-gray-400 mt-0.5">Test cognitive retention interval calculations based on recall quality.</p>
+        </div>
+        <span class="text-xs px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 font-mono font-bold">SM-2 Algorithm</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Recall Quality Score (0 to 5)</label>
+            <div class="flex items-center gap-2">
+              <input type="range" id="qualityInput" min="0" max="5" value="4" oninput="calculateSM2()" class="w-full accent-cyan-400">
+              <span id="qualityVal" class="text-sm font-bold text-cyan-300 font-mono w-6">4</span>
+            </div>
+            <p id="qualityDesc" class="text-[10px] text-gray-400 mt-1">Good response with hesitation.</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Previous Repetitions</label>
+            <input type="number" id="repInput" min="0" max="20" value="2" oninput="calculateSM2()" class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-1.5 text-xs text-white">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Current Easiness Factor (EF)</label>
+            <input type="number" id="efInput" min="1.3" max="3.5" step="0.1" value="2.5" oninput="calculateSM2()" class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-1.5 text-xs text-white">
+          </div>
+        </div>
+
+        <!-- Simulation Results Display -->
+        <div class="lg:col-span-2 p-5 rounded-xl bg-black/40 border border-cyan-500/30 space-y-4">
+          <h4 class="text-xs uppercase font-bold text-cyan-400 tracking-wider">Algorithmic Computation Output</h4>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="p-3 rounded-lg bg-white/[0.03] border border-white/5">
+              <span class="text-[10px] text-gray-400">Next Review Interval</span>
+              <p id="resInterval" class="text-2xl font-extrabold text-cyan-300 mt-1">6 Days</p>
+            </div>
+            <div class="p-3 rounded-lg bg-white/[0.03] border border-white/5">
+              <span class="text-[10px] text-gray-400">New Easiness Factor</span>
+              <p id="resEF" class="text-2xl font-extrabold text-purple-300 mt-1">2.50</p>
+            </div>
+            <div class="p-3 rounded-lg bg-white/[0.03] border border-white/5">
+              <span class="text-[10px] text-gray-400">Estimated Retention</span>
+              <p id="resRetention" class="text-2xl font-extrabold text-emerald-300 mt-1">96.8%</p>
+            </div>
+          </div>
+          <div class="text-xs text-gray-300 leading-relaxed p-3 rounded-lg bg-blue-950/20 border border-blue-500/20">
+            <span class="font-bold text-cyan-300">Formula Evaluation:</span> <span id="formulaText" class="font-mono text-[11px] text-gray-300"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function calculateSM2() {
+      const q = parseInt(document.getElementById("qualityInput").value);
+      const rep = parseInt(document.getElementById("repInput").value) || 0;
+      let ef = parseFloat(document.getElementById("efInput").value) || 2.5;
+
+      document.getElementById("qualityVal").innerText = q;
+
+      const descMap = [
+        "Complete blackout (0/5)",
+        "Incorrect response; familiar upon reveal (1/5)",
+        "Incorrect response; easy to remember (2/5)",
+        "Correct response with significant difficulty (3/5)",
+        "Correct response after a hesitation (4/5)",
+        "Perfect recall, instantaneous (5/5)"
+      ];
+      document.getElementById("qualityDesc").innerText = descMap[q];
+
+      // SM-2 Formula
+      ef = ef + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
+      if (ef < 1.3) ef = 1.3;
+
+      let interval = 1;
+      let nextRep = rep;
+
+      if (q >= 3) {
+        if (nextRep === 0) interval = 1;
+        else if (nextRep === 1) interval = 6;
+        else interval = Math.round(6 * Math.pow(ef, nextRep - 1));
+        nextRep++;
+      } else {
+        nextRep = 0;
+        interval = 1;
+      }
+
+      document.getElementById("resInterval").innerText = `${interval} ${interval === 1 ? 'Day' : 'Days'}`;
+      document.getElementById("resEF").innerText = ef.toFixed(2);
+      document.getElementById("resRetention").innerText = (q >= 3 ? (92 + q * 1.5).toFixed(1) : (60 + q * 5).toFixed(1)) + '%';
+      document.getElementById("formulaText").innerText = `EF' = ${ef.toFixed(2)} | I(${nextRep}) = ${interval} days (Due: ${new Date(Date.now() + interval * 86400000).toLocaleDateString()})`;
+    }
+
+    calculateSM2();
+  </script>
+</body>
+</html>
